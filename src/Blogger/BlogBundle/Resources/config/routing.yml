@@ -1,0 +1,42 @@
+BloggerBlogBundle_homepage:
+    path:     /home
+    defaults: { _controller: BloggerBlogBundle:Page:index }
+    requirements:
+        _method: GET
+
+
+BloggerBlogBundle_about:
+    pattern:  /about
+    defaults: { _controller: BloggerBlogBundle:Page:about }
+    requirements:
+        _method:  GET
+
+
+BloggerBlogBundle_blog_show:
+    pattern:  /{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:show }
+    requirements:
+        _method:  GET
+        id: \d+
+
+BloggerBlogBundle_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: BloggerBlogBundle:Blog:edit }
+    requirements: 
+        _method: GET 
+        id: \d+
+
+
+BloggerBlogBundle_new:
+    pattern:  /{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:new }
+    requirements:
+        _method:  GET
+        id: \d+
+
+BloggerBlogBundle_delete:
+    pattern:  /delete/{id}
+    defaults: { _controller: BloggerBlogBundle:Blog:delete }
+    requirements:
+        _method:  DELETE
+        id: \d+
